@@ -35,7 +35,11 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo" onClick={() => setOpen(false)}>
-          <span className="navbar-logo-mark">YD</span>
+          <img
+            src="/d-logo.png"
+            alt={`${clinic.name} logo`}
+            className="navbar-logo-img"
+          />
           <span className="navbar-logo-text">
             {clinic.name}
             <span>Dental Care · {clinic.addressShort}</span>
@@ -44,22 +48,39 @@ export default function Navbar() {
 
         <nav className="navbar-links" aria-label="Primary">
           {links.map((l) => (
-            <NavLink key={l.label} to={l.to} end={l.to === '/'} className={({ isActive }) => (isActive ? 'active' : '')}>
+            <NavLink
+              key={l.label}
+              to={l.to}
+              end={l.to === '/'}
+              className={({ isActive }) => (isActive ? 'active' : '')}
+            >
               {l.label}
             </NavLink>
           ))}
         </nav>
 
         <div className="navbar-actions">
-          <a href={clinic.whatsapp} target="_blank" rel="noreferrer" className="navbar-whatsapp" aria-label="Chat on WhatsApp">
+          <a
+            href={clinic.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="navbar-whatsapp"
+            aria-label="Chat on WhatsApp"
+          >
             <MessageCircle size={19} />
           </a>
+
           <Link to="/contact" className="btn btn-primary btn-sm">
             Book Appointment
           </Link>
         </div>
 
-        <button className="navbar-burger" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
+        <button
+          className="navbar-burger"
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -85,10 +106,17 @@ export default function Navbar() {
                   {l.label}
                 </NavLink>
               ))}
+
               <Link to="/contact" className="btn btn-primary" onClick={() => setOpen(false)}>
                 Book Appointment
               </Link>
-              <a href={clinic.whatsapp} target="_blank" rel="noreferrer" className="btn btn-whatsapp">
+
+              <a
+                href={clinic.whatsapp}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-whatsapp"
+              >
                 <MessageCircle size={18} /> WhatsApp Us
               </a>
             </nav>

@@ -18,7 +18,7 @@ export default function Doctor() {
         >
           <div className="doctor-photo-frame">
             <img
-              src="/doctor.webp"
+              src="/doctor.jpeg"
               alt="Dr. Ruby Ladha, lead dentist at Your Dentist, Malviya Nagar"
             />
           </div>

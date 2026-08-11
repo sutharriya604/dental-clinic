@@ -18,7 +18,7 @@ export default function Doctor() {
         >
           <div className="doctor-photo-frame">
             <img
-              src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=900&auto=format&fit=crop"
+              src="/doctor.webp"
               alt="Dr. Ruby Ladha, lead dentist at Your Dentist, Malviya Nagar"
             />
           </div>
